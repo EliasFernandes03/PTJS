@@ -5,9 +5,12 @@
     "author": "First Last <first.last@example.com>",
     "main": "server.js",
     "scripts": {
-      "start": "node server.js"
+        "start": "npm run open",
+        "open": "concurrently \"http-server -a localhost -p 8080\" \"open http://localhost:8080/build\""
     },
     "dependencies": {
-      "express": "^4.16.1"
+        "concurrently": "^7.6.0",
+        "express": "^4.16.1",
+        "http-server": "^14.1.1"
     }
-  }
+}

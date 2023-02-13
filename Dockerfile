@@ -1,13 +1,5 @@
-FROM node:18
+FROM nginx
 
-WORKDIR /usr/src/app
+COPY . /usr/share/nginx/html
 
-COPY package*.json ./
-
-COPY . .
-
-RUN npm install
-
-EXPOSE 5500
-
-CMD [ "node", "server.js" ]
+EXPOSE 8080
